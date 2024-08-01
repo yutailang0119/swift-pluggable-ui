@@ -1,7 +1,7 @@
 import XCTest
-@testable import swift_pluggable_ui
+@testable import SwiftPluggableUI
 
-final class swift_pluggable_uiTests: XCTestCase {
+final class SwiftPluggableUITests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
