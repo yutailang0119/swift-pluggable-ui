@@ -5,5 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "Example",
+    platforms: [
+        .iOS(.v15),
+        .macOS(.v12),
+        .tvOS(.v15),
+        .watchOS(.v8),
+    ],
     targets: []
 )
