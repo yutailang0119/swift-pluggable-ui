@@ -11,5 +11,8 @@ let package = Package(
         .tvOS(.v15),
         .watchOS(.v8),
     ],
+    dependencies: [
+        .package(path: "../../swift-pluggable-ui"),
+    ],
     targets: []
 )
