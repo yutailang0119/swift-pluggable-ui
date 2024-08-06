@@ -6,10 +6,11 @@ import PackageDescription
 let package = Package(
     name: "swift-pluggable-ui",
     platforms: [
-        .iOS(.v15),
         .macOS(.v12),
+        .iOS(.v15),
         .tvOS(.v15),
         .watchOS(.v8),
+        .macCatalyst(.v15),
     ],
     products: [
         .library(
