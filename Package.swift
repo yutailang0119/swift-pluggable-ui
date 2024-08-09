@@ -2,6 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import CompilerPluginSupport
 
 let package = Package(
     name: "swift-pluggable-ui",
@@ -23,6 +24,13 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftPluggableUI"),
+        .macro(
+            name: "SwiftPluggableUIMacros",
+            dependencies: [
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+            ]
+        ),
         .testTarget(
             name: "SwiftPluggableUITests",
             dependencies: ["SwiftPluggableUI"]
