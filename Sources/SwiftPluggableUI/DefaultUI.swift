@@ -1,6 +1,6 @@
 import SwiftUI
 
-public protocol DefaultUI {
+@MainActor public protocol DefaultUI {
     associatedtype DefaultBody: View
-    var defaultBody: Self.DefaultBody { get }
+    @ViewBuilder var defaultBody: Self.DefaultBody { get }
 }

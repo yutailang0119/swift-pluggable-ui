@@ -1,6 +1,6 @@
 import SwiftUI
 
-public protocol PluginUI {
+@MainActor public protocol PluginUI {
     associatedtype PluginBody: View
-    var pluginBody: Self.PluginBody { get }
+    @ViewBuilder var pluginBody: Self.PluginBody { get }
 }
