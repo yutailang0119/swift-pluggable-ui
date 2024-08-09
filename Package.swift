@@ -17,6 +17,9 @@ let package = Package(
             name: "SwiftPluggableUI",
             targets: ["SwiftPluggableUI"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "600.0.0-latest"),
+    ],
     targets: [
         .target(
             name: "SwiftPluggableUI"),
