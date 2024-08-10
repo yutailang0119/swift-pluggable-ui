@@ -1,8 +1,8 @@
 // swift-tools-version: 6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-import PackageDescription
 import CompilerPluginSupport
+import PackageDescription
 
 let package = Package(
   name: "swift-pluggable-ui",
@@ -16,10 +16,12 @@ let package = Package(
   products: [
     .library(
       name: "SwiftPluggableUI",
-      targets: ["SwiftPluggableUI"]),
+      targets: ["SwiftPluggableUI"])
   ],
   dependencies: [
-    .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "600.0.0-latest"),
+    .package(
+      url: "https://github.com/swiftlang/swift-syntax.git",
+      from: "600.0.0-latest")
   ],
   targets: [
     .target(

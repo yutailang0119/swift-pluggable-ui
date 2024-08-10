@@ -39,7 +39,7 @@ public struct PluggableUIMacro: ExtensionMacro {
         """
       )
       .formatted()
-      .cast(ExtensionDeclSyntax.self),
+      .cast(ExtensionDeclSyntax.self)
     ]
   }
 }

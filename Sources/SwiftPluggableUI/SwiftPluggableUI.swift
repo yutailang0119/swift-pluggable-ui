@@ -5,4 +5,5 @@ import SwiftUI
   conformances: SwiftUI.View, SwiftPluggableUI.DefaultUI,
   names: named(body)
 )
-public macro PluggableUI() = #externalMacro(module: "SwiftPluggableUIMacros", type: "PluggableUIMacro")
+public macro PluggableUI() =
+  #externalMacro(module: "SwiftPluggableUIMacros", type: "PluggableUIMacro")
