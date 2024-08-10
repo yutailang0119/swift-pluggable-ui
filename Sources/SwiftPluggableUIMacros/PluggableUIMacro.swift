@@ -24,6 +24,22 @@ public struct PluggableUIMacro: ExtensionMacro {
             throw error
         }
 
-        fatalError()
+        return [
+            try ExtensionDeclSyntax(
+              """
+              extension \(raw: typeName): \(raw: protocols.map(\.description).joined(separator: ", ")){
+                  public var body: some View {
+                      if let plugin = self as? any PluginUI {
+                          AnyView(plugin.pluginBody)
+                      } else if let `default` = self as? any DefaultUI {
+                          AnyView(`default`.defaultBody)
+                      }
+                  }
+              }
+              """
+            )
+            .formatted()
+            .cast(ExtensionDeclSyntax.self),
+        ]
     }
 }
