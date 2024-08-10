@@ -10,6 +10,20 @@ public struct PluggableUIMacro: ExtensionMacro {
         conformingTo protocols: [SwiftSyntax.TypeSyntax],
         in context: some SwiftSyntaxMacros.MacroExpansionContext
     ) throws -> [SwiftSyntax.ExtensionDeclSyntax] {
+        guard
+            let typeName = type.as(IdentifierTypeSyntax.self)?.name,
+            !typeName.text.isEmpty
+        else {
+            let error = MacroExpansionErrorMessage("type name invalid")
+            context.diagnose(
+                Diagnostic(
+                    node: node,
+                    message: error
+                )
+            )
+            throw error
+        }
+
         fatalError()
     }
 }
