@@ -23,7 +23,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftPluggableUI"),
+            name: "SwiftPluggableUI",
+            dependencies: ["SwiftPluggableUIMacros"]
+        ),
         .macro(
             name: "SwiftPluggableUIMacros",
             dependencies: [
