@@ -31,8 +31,8 @@ public struct PluggableUIMacro: ExtensionMacro {
                   public var body: some View {
                       if let plugin = self as? any PluginUI {
                           AnyView(plugin.pluginBody)
-                      } else if let `default` = self as? any DefaultUI {
-                          AnyView(`default`.defaultBody)
+                      } else {
+                          defaultBody
                       }
                   }
               }
