@@ -16,3 +16,7 @@ extension PluggableText: DefaultUI {
       .foregroundStyle(.blue)
   }
 }
+
+#Preview {
+  PluggableText(text: "Text")
+}
