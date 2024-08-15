@@ -15,7 +15,3 @@ extension PluggableText: DefaultUI {
     Text(text)
   }
 }
-
-#Preview {
-  PluggableText(text: "Text")
-}
