@@ -6,7 +6,7 @@ extension PluggableText: @retroactive PluginUI {
   public var pluginBody: some View {
     Text(text)
       .font(.largeTitle)
-      .foregroundStyle(.red)
+      .foregroundStyle(.blue)
   }
 }
 

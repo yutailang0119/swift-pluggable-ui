@@ -13,7 +13,6 @@ public struct PluggableText {
 extension PluggableText: DefaultUI {
   public var defaultBody: some View {
     Text(text)
-      .foregroundStyle(.blue)
   }
 }
 
