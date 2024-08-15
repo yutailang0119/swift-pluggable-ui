@@ -29,5 +29,12 @@ let package = Package(
         .product(name: "SwiftPluggableUI", package: "swift-pluggable-ui"),
       ]
     ),
+    .target(
+      name: "UndecoratedUI",
+      dependencies: [
+        .target(name: "Declaration"),
+        .product(name: "SwiftPluggableUI", package: "swift-pluggable-ui"),
+      ]
+    ),
   ]
 )
