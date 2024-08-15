@@ -17,15 +17,15 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "PluggableUIDeclaration",
+      name: "Declaration",
       dependencies: [
         .product(name: "SwiftPluggableUI", package: "swift-pluggable-ui")
       ]
     ),
     .target(
-      name: "CustomUIApp",
+      name: "DecoratedUI",
       dependencies: [
-        .target(name: "PluggableUIDeclaration"),
+        .target(name: "Declaration"),
         .product(name: "SwiftPluggableUI", package: "swift-pluggable-ui"),
       ]
     ),

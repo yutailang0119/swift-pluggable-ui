@@ -1,4 +1,4 @@
-import PluggableUIDeclaration
+import Declaration
 import SwiftPluggableUI
 import SwiftUI
 
