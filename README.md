@@ -30,3 +30,43 @@ let package = Package(
   ]
 )
 ```
+
+## Usage
+
+### Declaration
+
+```swift
+import SwiftPluggableUI
+import SwiftUI
+
+@PluggableUI
+public struct PluggableText {
+  public var text: String
+
+  public init(text: String) {
+    self.text = text
+  }
+}
+
+extension PluggableText: DefaultUI {
+  public var defaultBody: some View {
+    Text(text)
+  }
+}
+```
+
+### Decorated
+
+```swift
+import DeclarationUI
+import SwiftPluggableUI
+import SwiftUI
+
+extension PluggableText: PluginUI {
+  public var pluginBody: some View {
+    Text(text)
+      .font(.largeTitle)
+      .foregroundStyle(.blue)
+  }
+}
+```
