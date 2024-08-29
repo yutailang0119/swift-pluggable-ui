@@ -60,7 +60,7 @@ import DeclarationUI
 import SwiftPluggableUI
 import SwiftUI
 
-extension PluggableText: PluginUI {
+extension PluggableText: @retroactive PluginUI {
   public var pluginBody: some View {
     Text(text)
       .font(.largeTitle)
