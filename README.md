@@ -68,3 +68,7 @@ extension PluggableText: @retroactive PluginUI {
   }
 }
 ```
+
+## Author
+
+[Yutaro Muta](https://github.com/yutailang0119)
