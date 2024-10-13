@@ -14,7 +14,7 @@ public struct PluggableUIMacro: ExtensionMacro {
       let typeName = type.as(IdentifierTypeSyntax.self)?.name,
       !typeName.text.isEmpty
     else {
-      let error = MacroExpansionErrorMessage("type name invalid")
+      let error = MacroExpansionErrorMessage("Type name invalid")
       context.diagnose(
         Diagnostic(
           node: node,
