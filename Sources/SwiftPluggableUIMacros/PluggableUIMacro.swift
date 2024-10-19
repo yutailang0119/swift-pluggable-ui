@@ -1,5 +1,6 @@
 import SwiftDiagnostics
 import SwiftSyntax
+import SwiftSyntaxMacroExpansion
 import SwiftSyntaxMacros
 
 public struct PluggableUIMacro: ExtensionMacro {
