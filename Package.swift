@@ -39,7 +39,7 @@ let package = Package(
     ),
     .testTarget(
       name: "SwiftPluggableUITests",
-      dependencies: ["SwiftPluggableUI"]
+      dependencies: ["SwiftPluggableUIMacros"]
     ),
   ]
 )
