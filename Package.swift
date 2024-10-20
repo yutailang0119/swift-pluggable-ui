@@ -39,7 +39,10 @@ let package = Package(
     ),
     .testTarget(
       name: "SwiftPluggableUITests",
-      dependencies: ["SwiftPluggableUIMacros"]
+      dependencies: [
+        "SwiftPluggableUIMacros",
+        .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+      ]
     ),
   ]
 )
