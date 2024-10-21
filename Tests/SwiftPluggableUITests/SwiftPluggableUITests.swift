@@ -1,6 +1,13 @@
+import SwiftSyntaxMacros
 import Testing
 
-@testable import SwiftPluggableUI
+#if canImport(SwiftPluggableUIMacros)
+import SwiftPluggableUIMacros
+
+let testMacros: [String: Macro.Type] = [
+  "PluggableUI": PluggableUIMacro.self
+]
+#endif
 
 @Suite
 struct SwiftPluggableUITests {
