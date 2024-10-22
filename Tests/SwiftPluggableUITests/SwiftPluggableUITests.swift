@@ -1,5 +1,5 @@
 import SwiftSyntaxMacros
-import Testing
+import XCTest
 
 #if canImport(SwiftPluggableUIMacros)
 import SwiftPluggableUIMacros
@@ -9,8 +9,6 @@ let testMacros: [String: Macro.Type] = [
 ]
 #endif
 
-@Suite
-struct SwiftPluggableUITests {
-  @Test
-  func example() throws {}
+final class SwiftPluggableUITests: XCTestCase {
+  func testExample() throws {}
 }
