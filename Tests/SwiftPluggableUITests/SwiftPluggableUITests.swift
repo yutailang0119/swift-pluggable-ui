@@ -1,3 +1,4 @@
+import SwiftSyntaxMacroExpansion
 import SwiftSyntaxMacros
 import SwiftSyntaxMacrosTestSupport
 import XCTest
@@ -5,8 +6,11 @@ import XCTest
 #if canImport(SwiftPluggableUIMacros)
 import SwiftPluggableUIMacros
 
-let testMacros: [String: Macro.Type] = [
-  "PluggableUI": PluggableUIMacro.self
+let testMacros: [String: MacroSpec] = [
+  "PluggableUI": MacroSpec(
+    type: PluggableUIMacro.self,
+    conformances: ["View", "DefaultUI"]
+  )
 ]
 #endif
 
