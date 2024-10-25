@@ -35,7 +35,7 @@ final class SwiftPluggableUITests: XCTestCase {
           }
         }
         """,
-      macros: testMacros
+      macroSpecs: testMacros
     )
     #else
     throw XCTSkip("macros are only supported when running tests for the host platform")
