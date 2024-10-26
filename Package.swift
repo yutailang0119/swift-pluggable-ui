@@ -23,16 +23,16 @@ let package = Package(
     .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "600.0.1")
   ],
   targets: [
-    .target(
-      name: "SwiftPluggableUI",
-      dependencies: ["SwiftPluggableUIMacros"]
-    ),
     .macro(
       name: "SwiftPluggableUIMacros",
       dependencies: [
         .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
         .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
       ]
+    ),
+    .target(
+      name: "SwiftPluggableUI",
+      dependencies: ["SwiftPluggableUIMacros"]
     ),
     .testTarget(
       name: "SwiftPluggableUITests",
