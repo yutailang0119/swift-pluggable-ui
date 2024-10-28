@@ -14,7 +14,7 @@ let testMacros: [String: MacroSpec] = [
 ]
 #endif
 
-final class SwiftPluggableUITests: XCTestCase {
+final class PluggableUITests: XCTestCase {
   func testPluggableUIMacro() throws {
     #if canImport(SwiftPluggableUIMacros)
     assertMacroExpansion(
