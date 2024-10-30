@@ -37,6 +37,7 @@ public struct PluggableUIMacro: ExtensionMacro {
         }
         """
       )
+      .trimmed
       .formatted()
       .cast(ExtensionDeclSyntax.self)
     ]
