@@ -35,7 +35,8 @@ final class PluggableUITests: XCTestCase {
           }
         }
         """,
-      macroSpecs: testMacros
+      macroSpecs: testMacros,
+      indentationWidth: .spaces(2)
     )
     #else
     throw XCTSkip("macros are only supported when running tests for the host platform")
