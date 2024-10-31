@@ -140,22 +140,7 @@ public struct PluggableUIMacro: ExtensionMacro {
     )
 
     return [
-      try ExtensionDeclSyntax(
-        """
-        extension \(raw: typeName): \(raw: protocols.map(\.description).joined(separator: ", ")){
-          public var body: some View {
-            if let plugin = self as? any PluginUI {
-              AnyView(plugin.pluginBody)
-            } else {
-              defaultBody
-            }
-          }
-        }
-        """
-      )
-      .trimmed
-      .formatted()
-      .cast(ExtensionDeclSyntax.self)
+      syntax
     ]
   }
 }
