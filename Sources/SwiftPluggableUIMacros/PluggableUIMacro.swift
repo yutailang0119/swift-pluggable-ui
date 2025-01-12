@@ -30,9 +30,7 @@ public struct PluggableUIMacro: ExtensionMacro {
         ? nil
         : InheritanceClauseSyntax {
           protocols.map {
-            InheritedTypeSyntax(
-              type: TypeSyntax(stringLiteral: $0.description)
-            )
+            InheritedTypeSyntax(type: $0)
           }
         },
       memberBlock: MemberBlockSyntax {
