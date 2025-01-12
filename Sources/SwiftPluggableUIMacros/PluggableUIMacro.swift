@@ -1,4 +1,3 @@
-import SwiftDiagnostics
 import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
@@ -14,14 +13,7 @@ public struct PluggableUIMacro: ExtensionMacro {
     guard let typeName = type.as(IdentifierTypeSyntax.self)?.name,
       !typeName.text.isEmpty
     else {
-      let error = MacroExpansionErrorMessage("Type name invalid")
-      context.diagnose(
-        Diagnostic(
-          node: node,
-          message: error
-        )
-      )
-      throw error
+      throw MacroExpansionErrorMessage("Type name invalid")
     }
 
     return [
