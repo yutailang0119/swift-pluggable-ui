@@ -25,7 +25,7 @@ public struct PluggableUIMacro: ExtensionMacro {
     }
 
     let syntax = ExtensionDeclSyntax(
-      extendedType: TypeSyntax(stringLiteral: "\(typeName)"),
+      extendedType: IdentifierTypeSyntax(name: typeName),
       inheritanceClause: protocols.isEmpty
         ? nil
         : InheritanceClauseSyntax {
@@ -41,13 +41,15 @@ public struct PluggableUIMacro: ExtensionMacro {
             PatternBindingSyntax(
               pattern: PatternSyntax(
                 IdentifierPatternSyntax(
-                  identifier: TokenSyntax(stringLiteral: "body")
+                  identifier: .identifier("body")
                 )
               ),
               typeAnnotation: TypeAnnotationSyntax(
                 type: SomeOrAnyTypeSyntax(
                   someOrAnySpecifier: .keyword(.some),
-                  constraint: TypeSyntax(stringLiteral: "View")
+                  constraint: IdentifierTypeSyntax(
+                    name: .identifier("View")
+                  )
                 )
               ),
               accessorBlock: AccessorBlockSyntax(
@@ -62,7 +64,7 @@ public struct PluggableUIMacro: ExtensionMacro {
                                 bindingSpecifier: .keyword(.let),
                                 pattern: PatternSyntax(
                                   IdentifierPatternSyntax(
-                                    identifier: TokenSyntax(stringLiteral: "plugin")
+                                    identifier: .identifier("plugin")
                                   )
                                 ),
                                 initializer: InitializerClauseSyntax(
@@ -73,7 +75,9 @@ public struct PluggableUIMacro: ExtensionMacro {
                                     questionOrExclamationMark: .postfixQuestionMarkToken(),
                                     type: SomeOrAnyTypeSyntax(
                                       someOrAnySpecifier: .keyword(.any),
-                                      constraint: TypeSyntax(stringLiteral: "PluginUI")
+                                      constraint: IdentifierTypeSyntax(
+                                        name: .identifier("PluginUI")
+                                      )
                                     )
                                   )
                                 )
