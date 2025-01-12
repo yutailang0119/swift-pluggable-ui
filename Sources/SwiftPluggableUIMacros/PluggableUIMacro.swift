@@ -68,7 +68,7 @@ public struct PluggableUIMacro: ExtensionMacro {
                                 initializer: InitializerClauseSyntax(
                                   value: AsExprSyntax(
                                     expression: DeclReferenceExprSyntax(
-                                      baseName: TokenSyntax(stringLiteral: "self")
+                                      baseName: .keyword(.self)
                                     ),
                                     questionOrExclamationMark: .postfixQuestionMarkToken(),
                                     type: SomeOrAnyTypeSyntax(
@@ -86,17 +86,17 @@ public struct PluggableUIMacro: ExtensionMacro {
                                     ExprSyntax(
                                       FunctionCallExprSyntax(
                                         calledExpression: DeclReferenceExprSyntax(
-                                          baseName: TokenSyntax(stringLiteral: "AnyView")
+                                          baseName: .identifier("AnyView")
                                         ),
                                         leftParen: .leftParenToken(),
                                         arguments: LabeledExprListSyntax {
                                           LabeledExprSyntax(
                                             expression: MemberAccessExprSyntax(
                                               base: DeclReferenceExprSyntax(
-                                                baseName: TokenSyntax(stringLiteral: "plugin")
+                                                baseName: .identifier("plugin")
                                               ),
                                               declName: DeclReferenceExprSyntax(
-                                                baseName: TokenSyntax(stringLiteral: "pluginBody")
+                                                baseName: .identifier("pluginBody")
                                               )
                                             )
                                           )
@@ -116,7 +116,7 @@ public struct PluggableUIMacro: ExtensionMacro {
                                     item: .expr(
                                       ExprSyntax(
                                         DeclReferenceExprSyntax(
-                                          baseName: TokenSyntax(stringLiteral: "defaultBody")
+                                          baseName: .identifier("defaultBody")
                                         )
                                       )
                                     )
