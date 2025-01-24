@@ -23,18 +23,18 @@ final class PluggableUITests: XCTestCase {
       public struct PluggableView {}
       """,
       expandedSource: """
-      public struct PluggableView {}
+        public struct PluggableView {}
 
-      extension PluggableView: View, DefaultUI {
-        public var body: some View {
-          if let plugin = self as? any PluginUI {
-            AnyView(plugin.pluginBody)
-          } else {
-            defaultBody
+        extension PluggableView: View, DefaultUI {
+          public var body: some View {
+            if let plugin = self as? any PluginUI {
+              AnyView(plugin.pluginBody)
+            } else {
+              defaultBody
+            }
           }
         }
-      }
-      """,
+        """,
       macroSpecs: testMacros,
       indentationWidth: .spaces(2)
     )
